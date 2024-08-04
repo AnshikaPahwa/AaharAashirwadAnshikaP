@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <style>
+        body {
+            background-color: #003366; /* Dark shade of blue */
+            color: #ffffff; /* White font */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        p {
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+        .tick-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px; /* Add margin to prevent overlap with text */
+        }
+        .tick {
+            position: absolute;
+            top: -200px; /* Start from outside the window */
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background: #ffffff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: top 1s ease-in-out;
+        }
+        .tick::before {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 50px;
+            border: solid green;
+            border-width: 0 6px 6px 0;
+            display: inline-block;
+            transform: rotate(45deg);
+            transform-origin: bottom left;
+        }
+        .tick.show {
+            top: 50%; /* Move to the center of the screen */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tick-wrapper">
+            <div class="tick"></div>
+        </div>
+        <h1>Food Donation Successful!</h1>
+        <p>Thank you for your generous contribution. A nearby NGO will reach out to you soon to arrange the food pickup and distribution.</p>
+    </div>
+    <script>
+        // Add the "show" class to the tick element after the page loads to trigger the animation
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.tick').classList.add('show');
+            }, 100); // slight delay to ensure smooth animation
+        };
+    </script>
+</body>
+</html>

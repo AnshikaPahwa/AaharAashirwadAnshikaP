@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Involvement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #16213e;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #b0b0b0;
+        }
+        .gallery-item {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery-item .card {
+            position: relative;
+            width: 30%;
+            border: 4px solid #2b2b4b;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .gallery-item .card img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item .card:hover img {
+            opacity: 0.3;
+        }
+        .gallery-item .card-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item .card:hover .card-content {
+            opacity: 1;
+        }
+        .gallery-item h2 {
+            color: #7f7fff;
+            margin-bottom: 10px;
+        }
+        .gallery-item h1 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .gallery-item p {
+            color: #b0b0b0;
+        }
+        @media screen and (max-width: 768px) {
+            .gallery-item .card {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="text-center">
+            <h1>Community Involvement</h1>
+            <p>Volunteers in Action and Community Events.</p>
+        </div>
+        <div class="gallery-item">
+            <div class="card">
+                <img src="photos/n5.jpg" alt="Food Preparation and Distribution">
+                <div class="card-content">
+                    <h2>Food Preparation and Distribution:</h2>
+                    
+                    
+                </div>
+            </div>
+            <div class="card">
+                <img src="photos/farmer (2).jpg" alt="Partnering with farmers">
+                <div class="card-content">
+                    <h2>Partnering with farmers</h2>
+                    
+                    
+                </div>
+            </div>
+            <div class="card">
+                <img src="photos/n4.jpg" alt="Collaborative Efforts">
+                <div class="card-content">
+                    <h2>Collaborative Efforts</h2>
+                    
+                    
+                </div>
+            </div>
+            <div class="card">
+                <img src="photos/1722687348094qnjwe7sr.png" alt="Before and After">
+                <div class="card-content">
+                    <h2>Before and After</h2>
+                    
+                </div>
+            </div>
+            <div class="card">
+                <img src="photos/vol.jpg" alt="Event Highlights">
+                <div class="card-content">
+                    <h2>Event Highlights</h2>
+                    
+                    
+                </div>
+            </div>
+            <div class="card">
+                <img src="photos/edunew.jpg" alt="Educational and Awareness">
+                <div class="card-content">
+                    <h2>Educational and Awareness</h2>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

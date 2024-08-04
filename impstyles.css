@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #b2b6ce;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.impact-container {
+    text-align: center;
+    max-width: 1200px;
+    padding: 20px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.title {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    color: #ffffff;
+    transition: opacity 1s ease-in-out;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: #cccccc;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.description {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    color: #aaaaaa;
+    transition: opacity 2s ease-in-out;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.impact-box {
+    background-color: #282c4b;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    animation: slideIn 1s ease-out;
+}
+
+.impact-box:hover {
+    transform: scale(1.05);
+    background-color: #33375a;
+}
+
+.impact-box h2 {
+    margin-top: 0;
+    color: #b4b5c7;
+}
+
+.impact-box p {
+    color: #dddddd;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGOs in Amritsar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a23;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #ffffff;
+        }
+        .ngo-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .ngo-item {
+            background-color: #1c1c3c;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            flex: 0 0 30%;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .ngo-item:hover {
+            transform: scale(1.05);
+        }
+        .ngo-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+        .ngo-item:hover .ngo-image {
+            transform: scale(1.1);
+            filter: brightness(0.8);
+        }
+        .ngo-name {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #00aaff;
+        }
+        .ngo-address {
+            color: #bbbbbb;
+        }
+        @media (max-width: 768px) {
+            .ngo-item {
+                flex: 0 0 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            .ngo-item {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>NGOs in Amritsar</h1>
+        </div>
+        <ul class="ngo-list">
+            <li class="ngo-item">
+                <img src="photos/emolocals.webp" alt="NGO 1" class="ngo-image">
+                <div class="ngo-name">Punjabi Herritage Foundation </div>
+                <div class="ngo-address">V.P.O. Gehri Mandi, Jandiala Guru Amritsar, Amritsar - 143001 ,Punjab</div>
+            </li>
+            <li class="ngo-item">
+                <img src="photos/volunteer.png" alt="NGO 2" class="ngo-image">
+                <div class="ngo-name">
+                    Bhai Dharam Singh Khalsa Charitable Trust</div>
+                <div class="ngo-address">Plot Number 1, Sultanwind, Amritsar - 143006 (Patti Behniwal)</div>
+            </li>
+            <li class="ngo-item">
+                <img src="photos/communityengagement.jpg" alt="NGO 3" class="ngo-image">
+                <div class="ngo-name">Aapke Saath , Amritsar</div>
+                <div class="ngo-address">New pawan nagar Amritsar, Punjab region, India 143001</div>
+            </li>
+          
+        </ul>
+    </div>
+</body>
+</html>

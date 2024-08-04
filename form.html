@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donation Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0A1F44;
+            color: #EDEDED;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            height: 100vh;
+            margin: 0;
+            overflow: auto;
+            animation: fadeIn 1s ease-in-out;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #1A1A2E;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            transform: translateY(-50px);
+            animation: slideUp 1s ease-in-out forwards;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:#3c86c4 ;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #EDEDED;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #162447;
+            color: #EDEDED;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #FFD700;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3c86c4;
+            border: none;
+            border-radius: 4px;
+            color: #1A1A2E;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0026ff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Food Donation Form</h2>
+        <form id="donationForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-method">Preferred Method of Contact</label>
+                <select id="contact-method" name="contact_method" required>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="food-items">Food Items</label>
+                <textarea id="food-items" name="food_items" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity (e.g., 10 cans, 5 kg)</label>
+                <input type="text" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="donation-type">Donation Type</label>
+                <select id="donation-type" name="donation_type" required>
+                    <option value="perishable">Perishable</option>
+                    <option value="non-perishable">Non-Perishable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pickup">Pickup Availability</label>
+                <input type="datetime-local" id="pickup" name="pickup" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry">Expiry Date (if applicable)</label>
+                <input type="date" id="expiry" name="expiry">
+            </div>
+            <div class="form-group">
+                <label for="special-instructions">Special Instructions</label>
+                <textarea id="special-instructions" name="special_instructions"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="volunteer">Interested in Volunteering?</label>
+                <select id="volunteer" name="volunteer" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <form action="thank_you.html" method="get"> 
+               
+                <button type="submit" class="form-group">Donate</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('donationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                contact: document.getElementById('contact').value,
+                contactMethod: document.getElementById('contact-method').value,
+                address: document.getElementById('address').value,
+                foodItems: document.getElementById('food-items').value,
+                quantity: document.getElementById('quantity').value,
+                donationType: document.getElementById('donation-type').value,
+                pickup: document.getElementById('pickup').value,
+                expiry: document.getElementById('expiry').value,
+                specialInstructions: document.getElementById('special-instructions').value,
+                volunteer: document.getElementById('volunteer').value
+            };
+
+            fetch('/submit1', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Thank you for your donation!');
+                document.getElementById('donationForm').reset();
+            })
+            .catch(error => {
+                alert('An error occurred. Please try again.');
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
